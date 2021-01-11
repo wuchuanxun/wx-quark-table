@@ -1,0 +1,47 @@
+<!--components/smart-table/smart-table.wxml-->
+<wxs module="objectAccess">
+var getValueByPath = function(target,keypath){
+  var paths = keypath.split('.')
+  var previous = target
+  for (var i=0; i<paths.length;i++) {
+    previous=previous[paths[i]]
+  }
+  return previous
+}
+
+module.exports.getValueByPath = getValueByPath;
+</wxs>
+
+<view class="table {{extClass.table}}">
+  <view class="table-header table-row {{extClass.header}}">
+    <view 
+      wx:for="{{columns}}" 
+      wx:key="index" 
+      class="{{extClass.headerItem}}"
+      style="flex: 1 1 {{item.width || 0}}; text-align:center">
+      {{item.title}}
+    </view>
+  </view>
+  <view 
+    class="table-body table-row {{extClass.row}}" 
+    wx:for="{{data}}" 
+    wx:for-item="dataRow"
+    wx:key="idx"
+    wx:for-index="idx"
+  >
+    <view 
+      wx:for="{{columns}}" 
+      wx:for-item="column"
+      wx:key="dataIndex"
+      class="truncate {{column.class}}"
+      style="flex: 1 1 {{column.width || 0}}; text-align:center"
+    >
+      <block wx:if="{{column.slot}}">
+        <slot name="{{column.slotScope}}{{idx}}"></slot>
+      </block>
+      <block wx:else>
+        {{objectAccess.getValueByPath(dataRow,column.dataIndex)}}
+      </block>
+    </view>
+  </view>
+</view>

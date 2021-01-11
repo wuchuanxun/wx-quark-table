@@ -1,0 +1,16 @@
+{
+  "name": "wx-quark-table",
+  "version": "1.0.0",
+  "description": "table for wechat miniprogram",
+  "miniprogram":"quark-table", 
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "miniprogram",
+    "table",
+    "wechat"
+  ],
+  "author": "wuchuanxun@outlook.com",
+  "license": "MIT"
+}

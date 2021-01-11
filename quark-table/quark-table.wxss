@@ -1,0 +1,27 @@
+/* components/smart-table/smart-table.wxss */
+.table{
+  padding: 0 5px;
+  font-size: 14px;
+}
+
+.table-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.table-header {
+  background-color: #EFF4FF;
+  color: #4E81F4;
+  border-radius: 5px 5px 0 0;
+}
+
+.truncate{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.table-body.table-row{
+  border-bottom: 1px solid #f7f7f7;
+}
