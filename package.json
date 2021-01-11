@@ -11,6 +11,10 @@
     "table",
     "wechat"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wuchuanxun/wx-quark-table"
+  },
   "author": "wuchuanxun@outlook.com",
   "license": "MIT"
 }
